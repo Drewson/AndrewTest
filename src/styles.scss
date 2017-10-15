@@ -1,0 +1,37 @@
+@import 'app/reset';
+@import 'app/theme';
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Roboto",sans-serif;
+}
+
+body {
+    margin: 4%;
+    display: grid;
+    background: $mikesBlue;
+    grid-template-rows: 150px auto;
+    grid-template-areas: 
+    "header"
+    "main";
+}
+
+.mikes-logo {
+    grid-area: header;
+    height: 100px;
+    background-image: url(./app/images/mikes-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main {
+    grid-area: main;
+    justify-self: center;
+    align-self: start;
+    width: 50%;
+}
