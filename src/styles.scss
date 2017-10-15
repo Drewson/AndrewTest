@@ -9,29 +9,41 @@ html {
     height: 100vh;
     width: 100vw;
     font-family: "Roboto",sans-serif;
-}
 
-body {
-    margin: 4%;
-    display: grid;
-    background: $mikesBlue;
-    grid-template-rows: 150px auto;
-    grid-template-areas: 
-    "header"
-    "main";
-}
+    body {
+        height: 100vh;
+        display: grid;
+        background: $mikesBlue;
+        grid-template-rows: 150px auto 50px;
+        grid-template-areas: 
+        "header"
+        "main"
+        "github";
+    
+        .mikes-logo {
+            margin: 4%;
+            grid-area: header;
+            height: 100px;
+            background-image: url(./app/images/mikes-logo.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .main {
+            margin: 5%;
+            grid-area: main;
+            justify-self: center;
+            align-self: start;
+            width: 50%;
+        }
 
-.mikes-logo {
-    grid-area: header;
-    height: 100px;
-    background-image: url(./app/images/mikes-logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.main {
-    grid-area: main;
-    justify-self: center;
-    align-self: start;
-    width: 50%;
+        .github-link {
+            grid-area: github;
+            justify-self: center;
+            align-self: end;
+            font-size: 2.5rem;
+            color: black;
+            margin-bottom: 5%;
+        }
+    }
 }
