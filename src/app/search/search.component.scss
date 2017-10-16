@@ -1,6 +1,7 @@
 @import '../theme';
 
 .search-container {
+  @include flash-blue;
   display: grid;
   grid-template-areas: 
   "search-text search-input search-icon";
@@ -22,6 +23,7 @@
   }
 
   input {
+    animation: pulsate 1s infinite;    
     width: 300px;
     height: 30px;
     padding: 0 7px;
