@@ -2,16 +2,13 @@
 
 .search-container {
   @include flash-blue;
-  display: grid;
-  grid-template-areas: 
-  "search-text search-input search-icon";
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
   grid-column-gap: 20px;
   align-items: center;
   background: $mikesLightGrey;
-  width: 100%;
-  border: 5px solid black;
-  padding: 10px;
+  border: 5px solid black; 
+  padding: 10px 20px;
   box-shadow: 3px 3px 10px black;
   border-radius: 10px;
 
@@ -22,13 +19,19 @@
     font-size: 1.2rem;
   }
 
+  .search-form {
+    position: relative;
+    background: white;
+    border: 1px solid black;
+  }
+
   input {
-    animation: pulsate 1s infinite;    
-    width: 300px;
+    animation: ease 1s infinite;  
+    width: 70%;
+    border: none;  
     height: 30px;
     padding: 0 7px;
     font-size: 1.2rem;
-    border: 1px solid black;
   }
 
   button {
@@ -39,5 +42,7 @@
   .search-icon {
     font-size: 1.5rem;
     margin: 0;
+    position: absolute;
+    right: 8px;
   }
 }
