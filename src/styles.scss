@@ -13,7 +13,7 @@ html {
     body {
         height: 100vh;
         display: grid;
-        background: $mikesBlue;
+        background: linear-gradient($mikesLightBlue,$mikesDarkBlue);
         grid-template-rows: 150px auto 50px;
         grid-template-areas: 
         "header"
@@ -21,7 +21,7 @@ html {
         "github";
     
         .mikes-logo {
-            margin: 4%;
+            margin: 3%;
             grid-area: header;
             height: 100px;
             background-image: url(./app/images/mikes-logo.png);
