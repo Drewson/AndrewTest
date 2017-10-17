@@ -1,9 +1,12 @@
 @import '../theme';
 
+
+
 .results-container {
+  @include heightTransition;
+  animation: 1s ease heightTransition;
   display: grid;
   position: relative;
-  height: 0px;
   background: $mikesDarkGrey;
   border: 5px solid black; 
   padding: 30px;
