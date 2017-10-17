@@ -1,9 +1,12 @@
 <div class='results-container'>
-  <p [hidden]=notFound>
+  <p [hidden]=notFound class='notFound'>
     Sorry! No Results Found for {{state}}
   </p>
-  <div *ngFor='let stateResult of stateResults'>
-    <h2>{{stateResult.name}}</h2>
+  <a routerLink="/" routerLinkActive="active" class='backButton'>
+    <i class="fa fa-angle-double-left" aria-hidden="true"></i>    
+  </a>
+  <div *ngFor='let stateResult of stateResults' class='stateResult'>
+    <h2 class='stateName'>{{stateResult.name}}</h2>
     <p>Capital City: {{stateResult.capital}}</p>
     <p>Largest City: {{stateResult.largest_city}}</p>
     <p>Area: {{stateResult.area}}</p>

@@ -14,8 +14,6 @@ export class StateAPIService {
     constructor(private http: Http){}
 
     getState(state){
-      const headers = new Headers();
-      headers.append( 'Content-Type', 'application/json' );
       return this.http.get(`http://services.groupkt.com/state/search/USA?text=${state}`)
         .map(this.extractData)      
         .catch(this.handleError);
