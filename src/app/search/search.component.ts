@@ -1,21 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl} from '@angular/forms';
 
+import { State } from '../models'
+
 @Component({
-  selector: 'app-search',
+  selector: 'search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
 
+  @Input() state: State;
   searchForm: FormGroup;
 
-  constructor() {
+  constructor(private router: Router) {
+
     this.searchForm = new FormGroup({
-      province: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      state: new FormControl('', [Validators.required, Validators.maxLength(100)]),
     });
-   }
+    
+  }
+
+  getState(event){
+    event.preventDefault();
+    const state = this.searchForm.get('state').value;    
+    this.state = state;
+    this.router.navigate(['/results', { state } ])
+  }
 
   ngOnInit() {
   }

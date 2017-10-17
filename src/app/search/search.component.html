@@ -1,7 +1,7 @@
 <div class='search-container'>
-  <h1 class='search-text'>Search Provinces:</h1>
-  <form [formGroup]="searchForm" (ngSubmit)='getProvince($event)' class='search-form'>
-    <input type="text" placeholder="e.g. BC" formControlName="province" name="province" class="flash-blue">
+  <h1 class='search-text'>Search States (USA):</h1>
+  <form [formGroup]="searchForm" (ngSubmit)='getState($event)' class='search-form'>
+    <input type="text" placeholder="e.g. California" formControlName="state" name="state" class="flash-blue">
     <button class='search-icon' type="submit">
       <i class="fa fa-search search-icon" aria-hidden="true"></i>    
     </button>

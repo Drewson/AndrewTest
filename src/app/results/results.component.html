@@ -1,3 +1,11 @@
 <div class='results-container'>
-
+  <p>
+    {{message}}
+  </p>
+  <div *ngFor='let stateResult of stateResults'>
+    <h2>{{stateResult.name}}</h2>
+    <p>Capital City: {{stateResult.capital}}</p>
+    <p>Largest City: {{stateResult.largest_city}}</p>
+    <p>Area: {{stateResult.area}}</p>
+  </div>
 </div>

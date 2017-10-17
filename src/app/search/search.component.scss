@@ -8,7 +8,7 @@
   align-items: center;
   background: $mikesLightGrey;
   border: 5px solid black; 
-  padding: 10px 20px;
+  padding: 10px 15px;
   box-shadow: 3px 3px 10px black;
   border-radius: 10px;
 
@@ -22,12 +22,19 @@
   .search-form {
     position: relative;
     background: white;
-    border: 1px solid black;
+    width: 55%;
+    border: 1px solid $mikesDarkGrey;
+    box-shadow: 2px 0 2px $mikesDarkGrey;
+  }
+
+  input:focus,
+  button:focus {
+      outline: none;
   }
 
   input {
     animation: ease 1s infinite;  
-    width: 70%;
+    width: 75%;
     border: none;  
     height: 30px;
     padding: 0 7px;
