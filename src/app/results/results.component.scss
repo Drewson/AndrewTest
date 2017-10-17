@@ -14,6 +14,14 @@
   border-radius: 10px;
   overflow: scroll;
 
+  .loader {
+    background-image: url('../images/loader.gif');
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+  }
+
   .notFound {
     font-size: 1.3rem;
   }

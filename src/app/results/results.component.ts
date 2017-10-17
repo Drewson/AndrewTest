@@ -12,9 +12,9 @@ import { StateAPIService } from '../apiService/states';
 })
 export class ResultsComponent implements OnInit {
 
-  isLoaded: true;
   state: string;
   notFound: boolean;
+  isLoading: boolean;
   stateResults: Array<Object>;
   private sub: any;
 
@@ -22,9 +22,6 @@ export class ResultsComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router) { }
 
-  getStyle() {
-    return '500px'
-  }
 
   ngOnInit() {
       
@@ -34,10 +31,9 @@ export class ResultsComponent implements OnInit {
 
     this.stateApiService.getState(this.state)
       .subscribe(val => {
-        this.notFound = !val.RestResponse.messages[0].includes('No matching state');
+        this.isLoading = true;
+        this.notFound = !val.RestResponse.messages[0].includes('No matching state') && this.isLoading;
         this.stateResults = val.RestResponse.result
-        console.log(val.RestResponse.messages)
-        console.log(this.stateResults)
       })
   }
 
