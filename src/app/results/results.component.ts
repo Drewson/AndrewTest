@@ -13,7 +13,7 @@ import { StateAPIService } from '../apiService/states';
 export class ResultsComponent implements OnInit {
 
   state: string;
-  message: Array<String>;
+  notFound: boolean;
   stateResults: Array<Object>;
   private sub: any;
 
@@ -28,9 +28,9 @@ export class ResultsComponent implements OnInit {
    console.log(this.state);
     this.stateApiService.getState(this.state)
       .subscribe(val => {
-        this.message = val.RestResponse.messages;
+        this.notFound = !val.RestResponse.messages[0].includes('No matching state');
         this.stateResults = val.RestResponse.result
-        console.log(this.message)
+        console.log(val.RestResponse.messages)
         console.log(this.stateResults)
       })
   }

@@ -1,6 +1,6 @@
 <div class='results-container'>
-  <p>
-    {{message}}
+  <p [hidden]=notFound>
+    Sorry! No Results Found for {{state}}
   </p>
   <div *ngFor='let stateResult of stateResults'>
     <h2>{{stateResult.name}}</h2>
