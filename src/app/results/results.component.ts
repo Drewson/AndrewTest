@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { State } from '../models'
 import { StateAPIService } from '../apiService/states';
 
 @Component({

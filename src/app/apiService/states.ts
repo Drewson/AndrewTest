@@ -6,8 +6,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/observable/throw';
 
-import { State } from '../models';
-
 @Injectable()
 export class StateAPIService {
 
