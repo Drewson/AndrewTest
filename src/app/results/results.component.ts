@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { StateAPIService } from '../apiService/states';
 
 @Component({
-  selector: 'results',
+  selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss'],
   providers: [ StateAPIService ]
@@ -21,7 +21,6 @@ export class ResultsComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router) { }
 
-
   ngOnInit() {
     this.isLoading = false;
     this.notFound = false;
@@ -34,7 +33,6 @@ export class ResultsComponent implements OnInit {
         this.isLoading = true;
         this.notFound = !val.RestResponse.messages[0].includes('No matching state') && true;
         this.stateResults = val.RestResponse.result;
-      })
+      });
   }
-
 }
