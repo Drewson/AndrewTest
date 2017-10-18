@@ -8,6 +8,7 @@ html {
     padding: 0;
     width: 100vw;
     font-family: "Roboto",sans-serif;
+    max-width: 100vw;
 
     body {
         min-height: 100vh;
@@ -33,7 +34,13 @@ html {
             grid-area: main;
             justify-self: center;
             align-self: start;
-            width: 600px;
+            max-width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .main {
+                width: 600px;
+            }
         }
 
         .github-link {
