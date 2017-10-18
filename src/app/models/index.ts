@@ -1,5 +1,4 @@
 export interface State {
-  RestResponse: Object,
   country : String,
   name : String,
   abbr : String,

@@ -24,7 +24,8 @@ export class ResultsComponent implements OnInit {
 
 
   ngOnInit() {
-      
+    this.isLoading = true;
+    this.notFound = false;
     this.sub = this.route.params.subscribe(params => {
       this.state = params['state'];
     });
@@ -32,8 +33,8 @@ export class ResultsComponent implements OnInit {
     this.stateApiService.getState(this.state)
       .subscribe(val => {
         this.isLoading = true;
-        this.notFound = !val.RestResponse.messages[0].includes('No matching state') && this.isLoading;
-        this.stateResults = val.RestResponse.result
+        this.notFound = !val.RestResponse.messages[0].includes('No matching state') && true;
+        this.stateResults = val.RestResponse.result;
       })
   }
 

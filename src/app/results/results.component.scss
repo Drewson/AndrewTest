@@ -4,12 +4,12 @@
 
 .results-container {
   @include heightTransition;
-  animation: 1s ease heightTransition;
   display: grid;
   position: relative;
   background: $mikesDarkGrey;
   border: 5px solid black; 
   padding: 30px;
+  margin-bottom: 80px;
   box-shadow: 3px 3px 10px black;
   border-radius: 10px;
   overflow: scroll;
@@ -27,6 +27,7 @@
   }
 
   .stateResult {
+    animation: 1s ease heightTransition;
     background: $mikesLightGrey;
     margin: 15px 0;
   }

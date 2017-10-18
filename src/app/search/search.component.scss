@@ -1,7 +1,7 @@
 @import '../theme';
 
 .search-container {
-  @include flash-blue;
+  @include flash-red;
   @include slideRight;
   animation: .3s ease-out 0s 1 slideRight;
   display: flex;
