@@ -12,7 +12,7 @@ import { StateAPIService } from '../apiService/states';
 })
 export class ResultsComponent implements OnInit {
 
-  state: string;
+  usaState: string;
   notFound: boolean;
   isLoading: boolean;
   stateResults: Array<Object>;
@@ -24,13 +24,13 @@ export class ResultsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.isLoading = true;
+    this.isLoading = false;
     this.notFound = false;
     this.sub = this.route.params.subscribe(params => {
-      this.state = params['state'];
+      this.usaState = params['usaState'];
     });
 
-    this.stateApiService.getState(this.state)
+    this.stateApiService.getState(this.usaState)
       .subscribe(val => {
         this.isLoading = true;
         this.notFound = !val.RestResponse.messages[0].includes('No matching state') && true;
