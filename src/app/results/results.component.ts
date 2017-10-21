@@ -12,6 +12,7 @@ import { StateAPIService } from '../apiService/states';
 export class ResultsComponent implements OnInit {
 
   usaState: string;
+  noConnection: boolean;
   notFound: boolean;
   isLoading: boolean;
   stateResults: Array<Object>;
@@ -24,6 +25,7 @@ export class ResultsComponent implements OnInit {
   ngOnInit() {
     this.isLoading = false;
     this.notFound = false;
+    this.noConnection = true;
     this.sub = this.route.params.subscribe(params => {
       this.usaState = params['usaState'];
     });
@@ -34,5 +36,13 @@ export class ResultsComponent implements OnInit {
         this.notFound = !val.RestResponse.messages[0].includes('No matching state') && true;
         this.stateResults = val.RestResponse.result;
       });
+
+    setInterval(() => {
+      if(!this.isLoading){
+        this.isLoading = true;
+        this.notFound = true;
+        this.noConnection = false;
+      }
+    }, 2500)
   }
 }
