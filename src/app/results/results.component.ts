@@ -32,17 +32,13 @@ export class ResultsComponent implements OnInit {
 
     this.stateApiService.getState(this.usaState)
       .subscribe(val => {
-        this.isLoading = true;
-        this.notFound = !val.RestResponse.messages[0].includes('No matching state') && true;
-        this.stateResults = val.RestResponse.result;
-      });
-
-    setInterval(() => {
-      if(!this.isLoading){
-        this.isLoading = true;
-        this.notFound = true;
-        this.noConnection = false;
-      }
-    }, 2500)
+          this.isLoading = true;
+          this.notFound = !val.RestResponse.messages[0].includes('No matching state') && true;
+          this.stateResults = val.RestResponse.result;
+        }, err => {
+          this.isLoading = true;
+          this.notFound = true;
+          this.noConnection = false;
+        });
   }
 }
